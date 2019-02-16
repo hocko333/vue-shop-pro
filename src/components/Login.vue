@@ -33,8 +33,8 @@ export default {
   data() {
     return {
       loginForm: {
-        username: '',
-        password: ''
+        username: 'admin',
+        password: '123456'
       },
       loginFormRules: {
         username: [
@@ -66,6 +66,7 @@ export default {
           window.sessionStorage.setItem('token', res.data.token)
           // 重定向到后台首页
           this.$router.push('/home')
+          this.$message.success('登录成功!')
         }
       })
     },
@@ -78,7 +79,7 @@ export default {
 
 <style lang="less" scoped>
 #login-container {
-  background-color: rgb(34, 77, 107);
+  background-color: #2b4b6b;
   height: 100%;
   overflow: hidden;
 
