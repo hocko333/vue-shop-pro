@@ -5,11 +5,26 @@ body,
   margin: 0;
   padding: 0;
 }
+
 .el-submenu__title,
 .el-menu-item {
   color: #fff;
   font-size: 13px;
 }
+
 i.iconfont {
   margin-right: 10px;
+}
+
+.box-card {
+  margin-top: 15px;
+}
+
+.el-table {
+  margin-top: 15px;
+  font-size: 12px;
+}
+
+.el-pagination {
+  margin-top: 15px;
 }

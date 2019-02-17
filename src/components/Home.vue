@@ -9,7 +9,7 @@
     </el-header>
 
     <el-container>
-      <el-aside :width="isCollapse ? '65px' : '200px'">
+      <el-aside :style="`transition: width .3s ease-out; width: ${isCollapse ? '65px' : '200px'}`">
         <div class="collapse-btn" @click="isCollapse=!isCollapse">|||</div>
         <el-menu
           background-color="#333744"
@@ -19,9 +19,14 @@
           :collapse="isCollapse"
           :collapse-transition="false"
           :router="true"
-          :style="isCollapse ? 'width: 65px' : 'width: 200px'"
+          style="border-right: none;"
         >
-          <el-submenu :index="item.id+''" v-for="(item, i) in menuList" :key="item.id">
+          <el-submenu
+            :index="item.id+''"
+            v-for="(item, i) in menuList"
+            :key="item.id"
+            :style="isCollapse ? 'width: 65px' : 'width: 200px'"
+          >
             <template slot="title">
               <i :class="`iconfont icon-${menuIcon[i]}`"></i>
               <span>{{ item.authName }}</span>
