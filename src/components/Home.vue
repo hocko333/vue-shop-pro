@@ -77,7 +77,7 @@ export default {
       const { data: res } = await this.$http.get('/menus')
       if (res.meta.status !== 200) {
         // 请求权限列表数据 不成功
-        return this.$message.error('请求权限数据失败!')
+        return this.$message.error(res.meta.msg)
       }
       // 权限列表 请求成功
       this.menuList = res.data
